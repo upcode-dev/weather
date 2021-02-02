@@ -40,4 +40,3 @@ flutter run lib/main.dart
 This project uses [static analysis](https://github.com/nicovlad16/google-flutter-projects/blob/master/analysis_options.yaml) together with [Github Actions](https://github.com/nicovlad16/google-flutter-projects/actions).
 
 This helps in bug-prevention and ensures that the code conforms with the Flutter and Dart style guidelines.
-
