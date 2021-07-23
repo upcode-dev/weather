@@ -37,6 +37,8 @@ dev_dependencies:
 
   freezed: ^0.14.3
 
+  mocktail: ^0.1.4
+
 dependency_overrides:
   rxdart: ^0.27.1
   analyzer: ^2.0.0

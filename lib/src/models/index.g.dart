@@ -8,8 +8,7 @@ part of models;
 
 Serializer<AppState> _$appStateSerializer = new _$AppStateSerializer();
 Serializer<Location> _$locationSerializer = new _$LocationSerializer();
-Serializer<LocationForecast> _$locationForecastSerializer =
-    new _$LocationForecastSerializer();
+Serializer<LocationForecast> _$locationForecastSerializer = new _$LocationForecastSerializer();
 
 class _$AppStateSerializer implements StructuredSerializer<AppState> {
   @override
@@ -23,19 +22,16 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
     final result = <Object?>[
       'searchLocations',
       serializers.serialize(object.searchLocations,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Location)])),
+          specifiedType: const FullType(BuiltList, const [const FullType(Location)])),
       'isMetricSystem',
-      serializers.serialize(object.isMetricSystem,
-          specifiedType: const FullType(bool)),
+      serializers.serialize(object.isMetricSystem, specifiedType: const FullType(bool)),
     ];
     Object? value;
     value = object.locationForecast;
     if (value != null) {
       result
         ..add('locationForecast')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(LocationForecast)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(LocationForecast)));
     }
     return result;
   }
@@ -53,18 +49,14 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       switch (key) {
         case 'searchLocations':
           result.searchLocations.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(Location)]))!
-              as BuiltList<Object?>);
+              specifiedType: const FullType(BuiltList, const [const FullType(Location)]))! as BuiltList<Object?>);
           break;
         case 'isMetricSystem':
-          result.isMetricSystem = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+          result.isMetricSystem = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool;
           break;
         case 'locationForecast':
-          result.locationForecast.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(LocationForecast))!
-              as LocationForecast);
+          result.locationForecast.replace(
+              serializers.deserialize(value, specifiedType: const FullType(LocationForecast))! as LocationForecast);
           break;
       }
     }
@@ -86,8 +78,7 @@ class _$LocationSerializer implements StructuredSerializer<Location> {
       'woeid',
       serializers.serialize(object.woeid, specifiedType: const FullType(int)),
       'title',
-      serializers.serialize(object.title,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.title, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -105,12 +96,10 @@ class _$LocationSerializer implements StructuredSerializer<Location> {
       final Object? value = iterator.current;
       switch (key) {
         case 'woeid':
-          result.woeid = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.woeid = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'title':
-          result.title = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.title = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -119,8 +108,7 @@ class _$LocationSerializer implements StructuredSerializer<Location> {
   }
 }
 
-class _$LocationForecastSerializer
-    implements StructuredSerializer<LocationForecast> {
+class _$LocationForecastSerializer implements StructuredSerializer<LocationForecast> {
   @override
   final Iterable<Type> types = const [LocationForecast, _$LocationForecast];
   @override
@@ -133,22 +121,18 @@ class _$LocationForecastSerializer
       'woeid',
       serializers.serialize(object.woeid, specifiedType: const FullType(int)),
       'title',
-      serializers.serialize(object.title,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.title, specifiedType: const FullType(String)),
       'weather',
-      serializers.serialize(object.weather,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.weather, specifiedType: const FullType(String)),
       'temperature',
-      serializers.serialize(object.temperature,
-          specifiedType: const FullType(double)),
+      serializers.serialize(object.temperature, specifiedType: const FullType(double)),
     ];
 
     return result;
   }
 
   @override
-  LocationForecast deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+  LocationForecast deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new LocationForecastBuilder();
 
@@ -159,20 +143,16 @@ class _$LocationForecastSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'woeid':
-          result.woeid = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.woeid = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'title':
-          result.title = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.title = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'weather':
-          result.weather = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.weather = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'temperature':
-          result.temperature = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.temperature = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
       }
     }
@@ -189,23 +169,15 @@ class _$AppState extends AppState {
   @override
   final LocationForecast? locationForecast;
 
-  factory _$AppState([void Function(AppStateBuilder)? updates]) =>
-      (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder)? updates]) => (new AppStateBuilder()..update(updates)).build();
 
-  _$AppState._(
-      {required this.searchLocations,
-      required this.isMetricSystem,
-      this.locationForecast})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        searchLocations, 'AppState', 'searchLocations');
-    BuiltValueNullFieldError.checkNotNull(
-        isMetricSystem, 'AppState', 'isMetricSystem');
+  _$AppState._({required this.searchLocations, required this.isMetricSystem, this.locationForecast}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(searchLocations, 'AppState', 'searchLocations');
+    BuiltValueNullFieldError.checkNotNull(isMetricSystem, 'AppState', 'isMetricSystem');
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -221,9 +193,7 @@ class _$AppState extends AppState {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc(0, searchLocations.hashCode), isMetricSystem.hashCode),
-        locationForecast.hashCode));
+    return $jf($jc($jc($jc(0, searchLocations.hashCode), isMetricSystem.hashCode), locationForecast.hashCode));
   }
 
   @override
@@ -240,21 +210,16 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState? _$v;
 
   ListBuilder<Location>? _searchLocations;
-  ListBuilder<Location> get searchLocations =>
-      _$this._searchLocations ??= new ListBuilder<Location>();
-  set searchLocations(ListBuilder<Location>? searchLocations) =>
-      _$this._searchLocations = searchLocations;
+  ListBuilder<Location> get searchLocations => _$this._searchLocations ??= new ListBuilder<Location>();
+  set searchLocations(ListBuilder<Location>? searchLocations) => _$this._searchLocations = searchLocations;
 
   bool? _isMetricSystem;
   bool? get isMetricSystem => _$this._isMetricSystem;
-  set isMetricSystem(bool? isMetricSystem) =>
-      _$this._isMetricSystem = isMetricSystem;
+  set isMetricSystem(bool? isMetricSystem) => _$this._isMetricSystem = isMetricSystem;
 
   LocationForecastBuilder? _locationForecast;
-  LocationForecastBuilder get locationForecast =>
-      _$this._locationForecast ??= new LocationForecastBuilder();
-  set locationForecast(LocationForecastBuilder? locationForecast) =>
-      _$this._locationForecast = locationForecast;
+  LocationForecastBuilder get locationForecast => _$this._locationForecast ??= new LocationForecastBuilder();
+  set locationForecast(LocationForecastBuilder? locationForecast) => _$this._locationForecast = locationForecast;
 
   AppStateBuilder();
 
@@ -287,8 +252,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
       _$result = _$v ??
           new _$AppState._(
               searchLocations: searchLocations.build(),
-              isMetricSystem: BuiltValueNullFieldError.checkNotNull(
-                  isMetricSystem, 'AppState', 'isMetricSystem'),
+              isMetricSystem: BuiltValueNullFieldError.checkNotNull(isMetricSystem, 'AppState', 'isMetricSystem'),
               locationForecast: _locationForecast?.build());
     } catch (_) {
       late String _$failedField;
@@ -299,8 +263,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _$failedField = 'locationForecast';
         _locationForecast?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -315,8 +278,7 @@ class _$Location extends Location {
   @override
   final String title;
 
-  factory _$Location([void Function(LocationBuilder)? updates]) =>
-      (new LocationBuilder()..update(updates)).build();
+  factory _$Location([void Function(LocationBuilder)? updates]) => (new LocationBuilder()..update(updates)).build();
 
   _$Location._({required this.woeid, required this.title}) : super._() {
     BuiltValueNullFieldError.checkNotNull(woeid, 'Location', 'woeid');
@@ -324,8 +286,7 @@ class _$Location extends Location {
   }
 
   @override
-  Location rebuild(void Function(LocationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Location rebuild(void Function(LocationBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   LocationBuilder toBuilder() => new LocationBuilder()..replace(this);
@@ -343,10 +304,7 @@ class _$Location extends Location {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Location')
-          ..add('woeid', woeid)
-          ..add('title', title))
-        .toString();
+    return (newBuiltValueToStringHelper('Location')..add('woeid', woeid)..add('title', title)).toString();
   }
 }
 
@@ -388,10 +346,8 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   _$Location build() {
     final _$result = _$v ??
         new _$Location._(
-            woeid: BuiltValueNullFieldError.checkNotNull(
-                woeid, 'Location', 'woeid'),
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, 'Location', 'title'));
+            woeid: BuiltValueNullFieldError.checkNotNull(woeid, 'Location', 'woeid'),
+            title: BuiltValueNullFieldError.checkNotNull(title, 'Location', 'title'));
     replace(_$result);
     return _$result;
   }
@@ -407,31 +363,22 @@ class _$LocationForecast extends LocationForecast {
   @override
   final double temperature;
 
-  factory _$LocationForecast(
-          [void Function(LocationForecastBuilder)? updates]) =>
+  factory _$LocationForecast([void Function(LocationForecastBuilder)? updates]) =>
       (new LocationForecastBuilder()..update(updates)).build();
 
-  _$LocationForecast._(
-      {required this.woeid,
-      required this.title,
-      required this.weather,
-      required this.temperature})
+  _$LocationForecast._({required this.woeid, required this.title, required this.weather, required this.temperature})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(woeid, 'LocationForecast', 'woeid');
     BuiltValueNullFieldError.checkNotNull(title, 'LocationForecast', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        weather, 'LocationForecast', 'weather');
-    BuiltValueNullFieldError.checkNotNull(
-        temperature, 'LocationForecast', 'temperature');
+    BuiltValueNullFieldError.checkNotNull(weather, 'LocationForecast', 'weather');
+    BuiltValueNullFieldError.checkNotNull(temperature, 'LocationForecast', 'temperature');
   }
 
   @override
-  LocationForecast rebuild(void Function(LocationForecastBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  LocationForecast rebuild(void Function(LocationForecastBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
-  LocationForecastBuilder toBuilder() =>
-      new LocationForecastBuilder()..replace(this);
+  LocationForecastBuilder toBuilder() => new LocationForecastBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -445,9 +392,7 @@ class _$LocationForecast extends LocationForecast {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, woeid.hashCode), title.hashCode), weather.hashCode),
-        temperature.hashCode));
+    return $jf($jc($jc($jc($jc(0, woeid.hashCode), title.hashCode), weather.hashCode), temperature.hashCode));
   }
 
   @override
@@ -461,8 +406,7 @@ class _$LocationForecast extends LocationForecast {
   }
 }
 
-class LocationForecastBuilder
-    implements Builder<LocationForecast, LocationForecastBuilder> {
+class LocationForecastBuilder implements Builder<LocationForecast, LocationForecastBuilder> {
   _$LocationForecast? _$v;
 
   int? _woeid;
@@ -510,14 +454,10 @@ class LocationForecastBuilder
   _$LocationForecast build() {
     final _$result = _$v ??
         new _$LocationForecast._(
-            woeid: BuiltValueNullFieldError.checkNotNull(
-                woeid, 'LocationForecast', 'woeid'),
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, 'LocationForecast', 'title'),
-            weather: BuiltValueNullFieldError.checkNotNull(
-                weather, 'LocationForecast', 'weather'),
-            temperature: BuiltValueNullFieldError.checkNotNull(
-                temperature, 'LocationForecast', 'temperature'));
+            woeid: BuiltValueNullFieldError.checkNotNull(woeid, 'LocationForecast', 'woeid'),
+            title: BuiltValueNullFieldError.checkNotNull(title, 'LocationForecast', 'title'),
+            weather: BuiltValueNullFieldError.checkNotNull(weather, 'LocationForecast', 'weather'),
+            temperature: BuiltValueNullFieldError.checkNotNull(temperature, 'LocationForecast', 'temperature'));
     replace(_$result);
     return _$result;
   }

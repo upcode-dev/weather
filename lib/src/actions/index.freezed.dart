@@ -75,9 +75,7 @@ mixin _$GetForecast {
 
 /// @nodoc
 abstract class $GetForecastCopyWith<$Res> {
-  factory $GetForecastCopyWith(
-          GetForecast value, $Res Function(GetForecast) then) =
-      _$GetForecastCopyWithImpl<$Res>;
+  factory $GetForecastCopyWith(GetForecast value, $Res Function(GetForecast) then) = _$GetForecastCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -91,17 +89,14 @@ class _$GetForecastCopyWithImpl<$Res> implements $GetForecastCopyWith<$Res> {
 
 /// @nodoc
 abstract class $GetForecast$CopyWith<$Res> {
-  factory $GetForecast$CopyWith(
-          GetForecast$ value, $Res Function(GetForecast$) then) =
+  factory $GetForecast$CopyWith(GetForecast$ value, $Res Function(GetForecast$) then) =
       _$GetForecast$CopyWithImpl<$Res>;
   $Res call({int woeid});
 }
 
 /// @nodoc
-class _$GetForecast$CopyWithImpl<$Res> extends _$GetForecastCopyWithImpl<$Res>
-    implements $GetForecast$CopyWith<$Res> {
-  _$GetForecast$CopyWithImpl(
-      GetForecast$ _value, $Res Function(GetForecast$) _then)
+class _$GetForecast$CopyWithImpl<$Res> extends _$GetForecastCopyWithImpl<$Res> implements $GetForecast$CopyWith<$Res> {
+  _$GetForecast$CopyWithImpl(GetForecast$ _value, $Res Function(GetForecast$) _then)
       : super(_value, (v) => _then(v as GetForecast$));
 
   @override
@@ -137,18 +132,15 @@ class _$GetForecast$ implements GetForecast$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is GetForecast$ &&
-            (identical(other.woeid, woeid) ||
-                const DeepCollectionEquality().equals(other.woeid, woeid)));
+            (identical(other.woeid, woeid) || const DeepCollectionEquality().equals(other.woeid, woeid)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(woeid);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(woeid);
 
   @JsonKey(ignore: true)
   @override
-  $GetForecast$CopyWith<GetForecast$> get copyWith =>
-      _$GetForecast$CopyWithImpl<GetForecast$>(this, _$identity);
+  $GetForecast$CopyWith<GetForecast$> get copyWith => _$GetForecast$CopyWithImpl<GetForecast$>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -204,24 +196,20 @@ abstract class GetForecast$ implements GetForecast {
 
   int get woeid => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetForecast$CopyWith<GetForecast$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetForecast$CopyWith<GetForecast$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetForecastSuccessfulCopyWith<$Res> {
-  factory $GetForecastSuccessfulCopyWith(GetForecastSuccessful value,
-          $Res Function(GetForecastSuccessful) then) =
+  factory $GetForecastSuccessfulCopyWith(GetForecastSuccessful value, $Res Function(GetForecastSuccessful) then) =
       _$GetForecastSuccessfulCopyWithImpl<$Res>;
   $Res call({LocationForecast locationForecast});
 }
 
 /// @nodoc
-class _$GetForecastSuccessfulCopyWithImpl<$Res>
-    extends _$GetForecastCopyWithImpl<$Res>
+class _$GetForecastSuccessfulCopyWithImpl<$Res> extends _$GetForecastCopyWithImpl<$Res>
     implements $GetForecastSuccessfulCopyWith<$Res> {
-  _$GetForecastSuccessfulCopyWithImpl(
-      GetForecastSuccessful _value, $Res Function(GetForecastSuccessful) _then)
+  _$GetForecastSuccessfulCopyWithImpl(GetForecastSuccessful _value, $Res Function(GetForecastSuccessful) _then)
       : super(_value, (v) => _then(v as GetForecastSuccessful));
 
   @override
@@ -258,20 +246,16 @@ class _$GetForecastSuccessful implements GetForecastSuccessful {
     return identical(this, other) ||
         (other is GetForecastSuccessful &&
             (identical(other.locationForecast, locationForecast) ||
-                const DeepCollectionEquality()
-                    .equals(other.locationForecast, locationForecast)));
+                const DeepCollectionEquality().equals(other.locationForecast, locationForecast)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(locationForecast);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(locationForecast);
 
   @JsonKey(ignore: true)
   @override
   $GetForecastSuccessfulCopyWith<GetForecastSuccessful> get copyWith =>
-      _$GetForecastSuccessfulCopyWithImpl<GetForecastSuccessful>(
-          this, _$identity);
+      _$GetForecastSuccessfulCopyWithImpl<GetForecastSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -323,29 +307,24 @@ class _$GetForecastSuccessful implements GetForecastSuccessful {
 }
 
 abstract class GetForecastSuccessful implements GetForecast {
-  const factory GetForecastSuccessful(LocationForecast locationForecast) =
-      _$GetForecastSuccessful;
+  const factory GetForecastSuccessful(LocationForecast locationForecast) = _$GetForecastSuccessful;
 
   LocationForecast get locationForecast => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetForecastSuccessfulCopyWith<GetForecastSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetForecastSuccessfulCopyWith<GetForecastSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetForecastErrorCopyWith<$Res> {
-  factory $GetForecastErrorCopyWith(
-          GetForecastError value, $Res Function(GetForecastError) then) =
+  factory $GetForecastErrorCopyWith(GetForecastError value, $Res Function(GetForecastError) then) =
       _$GetForecastErrorCopyWithImpl<$Res>;
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class _$GetForecastErrorCopyWithImpl<$Res>
-    extends _$GetForecastCopyWithImpl<$Res>
+class _$GetForecastErrorCopyWithImpl<$Res> extends _$GetForecastCopyWithImpl<$Res>
     implements $GetForecastErrorCopyWith<$Res> {
-  _$GetForecastErrorCopyWithImpl(
-      GetForecastError _value, $Res Function(GetForecastError) _then)
+  _$GetForecastErrorCopyWithImpl(GetForecastError _value, $Res Function(GetForecastError) _then)
       : super(_value, (v) => _then(v as GetForecastError));
 
   @override
@@ -389,11 +368,9 @@ class _$GetForecastError implements GetForecastError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is GetForecastError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.stackTrace, stackTrace) ||
-                const DeepCollectionEquality()
-                    .equals(other.stackTrace, stackTrace)));
+                const DeepCollectionEquality().equals(other.stackTrace, stackTrace)));
   }
 
   @override
@@ -457,14 +434,12 @@ class _$GetForecastError implements GetForecastError {
 }
 
 abstract class GetForecastError implements GetForecast, ErrorAction {
-  const factory GetForecastError(Object error, StackTrace stackTrace) =
-      _$GetForecastError;
+  const factory GetForecastError(Object error, StackTrace stackTrace) = _$GetForecastError;
 
   Object get error => throw _privateConstructorUsedError;
   StackTrace get stackTrace => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetForecastErrorCopyWith<GetForecastError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetForecastErrorCopyWith<GetForecastError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -530,14 +505,12 @@ mixin _$SearchLocation {
 
 /// @nodoc
 abstract class $SearchLocationCopyWith<$Res> {
-  factory $SearchLocationCopyWith(
-          SearchLocation value, $Res Function(SearchLocation) then) =
+  factory $SearchLocationCopyWith(SearchLocation value, $Res Function(SearchLocation) then) =
       _$SearchLocationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SearchLocationCopyWithImpl<$Res>
-    implements $SearchLocationCopyWith<$Res> {
+class _$SearchLocationCopyWithImpl<$Res> implements $SearchLocationCopyWith<$Res> {
   _$SearchLocationCopyWithImpl(this._value, this._then);
 
   final SearchLocation _value;
@@ -547,18 +520,15 @@ class _$SearchLocationCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $SearchLocation$CopyWith<$Res> {
-  factory $SearchLocation$CopyWith(
-          SearchLocation$ value, $Res Function(SearchLocation$) then) =
+  factory $SearchLocation$CopyWith(SearchLocation$ value, $Res Function(SearchLocation$) then) =
       _$SearchLocation$CopyWithImpl<$Res>;
   $Res call({String location});
 }
 
 /// @nodoc
-class _$SearchLocation$CopyWithImpl<$Res>
-    extends _$SearchLocationCopyWithImpl<$Res>
+class _$SearchLocation$CopyWithImpl<$Res> extends _$SearchLocationCopyWithImpl<$Res>
     implements $SearchLocation$CopyWith<$Res> {
-  _$SearchLocation$CopyWithImpl(
-      SearchLocation$ _value, $Res Function(SearchLocation$) _then)
+  _$SearchLocation$CopyWithImpl(SearchLocation$ _value, $Res Function(SearchLocation$) _then)
       : super(_value, (v) => _then(v as SearchLocation$));
 
   @override
@@ -594,14 +564,11 @@ class _$SearchLocation$ implements SearchLocation$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SearchLocation$ &&
-            (identical(other.location, location) ||
-                const DeepCollectionEquality()
-                    .equals(other.location, location)));
+            (identical(other.location, location) || const DeepCollectionEquality().equals(other.location, location)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(location);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(location);
 
   @JsonKey(ignore: true)
   @override
@@ -662,29 +629,25 @@ abstract class SearchLocation$ implements SearchLocation {
 
   String get location => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SearchLocation$CopyWith<SearchLocation$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SearchLocation$CopyWith<SearchLocation$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SearchLocationSuccessfulCopyWith<$Res> {
-  factory $SearchLocationSuccessfulCopyWith(SearchLocationSuccessful value,
-          $Res Function(SearchLocationSuccessful) then) =
+  factory $SearchLocationSuccessfulCopyWith(
+          SearchLocationSuccessful value, $Res Function(SearchLocationSuccessful) then) =
       _$SearchLocationSuccessfulCopyWithImpl<$Res>;
   $Res call({List<Location> locations});
 }
 
 /// @nodoc
-class _$SearchLocationSuccessfulCopyWithImpl<$Res>
-    extends _$SearchLocationCopyWithImpl<$Res>
+class _$SearchLocationSuccessfulCopyWithImpl<$Res> extends _$SearchLocationCopyWithImpl<$Res>
     implements $SearchLocationSuccessfulCopyWith<$Res> {
-  _$SearchLocationSuccessfulCopyWithImpl(SearchLocationSuccessful _value,
-      $Res Function(SearchLocationSuccessful) _then)
+  _$SearchLocationSuccessfulCopyWithImpl(SearchLocationSuccessful _value, $Res Function(SearchLocationSuccessful) _then)
       : super(_value, (v) => _then(v as SearchLocationSuccessful));
 
   @override
-  SearchLocationSuccessful get _value =>
-      super._value as SearchLocationSuccessful;
+  SearchLocationSuccessful get _value => super._value as SearchLocationSuccessful;
 
   @override
   $Res call({
@@ -717,19 +680,16 @@ class _$SearchLocationSuccessful implements SearchLocationSuccessful {
     return identical(this, other) ||
         (other is SearchLocationSuccessful &&
             (identical(other.locations, locations) ||
-                const DeepCollectionEquality()
-                    .equals(other.locations, locations)));
+                const DeepCollectionEquality().equals(other.locations, locations)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(locations);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(locations);
 
   @JsonKey(ignore: true)
   @override
   $SearchLocationSuccessfulCopyWith<SearchLocationSuccessful> get copyWith =>
-      _$SearchLocationSuccessfulCopyWithImpl<SearchLocationSuccessful>(
-          this, _$identity);
+      _$SearchLocationSuccessfulCopyWithImpl<SearchLocationSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -781,29 +741,24 @@ class _$SearchLocationSuccessful implements SearchLocationSuccessful {
 }
 
 abstract class SearchLocationSuccessful implements SearchLocation {
-  const factory SearchLocationSuccessful(List<Location> locations) =
-      _$SearchLocationSuccessful;
+  const factory SearchLocationSuccessful(List<Location> locations) = _$SearchLocationSuccessful;
 
   List<Location> get locations => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SearchLocationSuccessfulCopyWith<SearchLocationSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SearchLocationSuccessfulCopyWith<SearchLocationSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SearchLocationErrorCopyWith<$Res> {
-  factory $SearchLocationErrorCopyWith(
-          SearchLocationError value, $Res Function(SearchLocationError) then) =
+  factory $SearchLocationErrorCopyWith(SearchLocationError value, $Res Function(SearchLocationError) then) =
       _$SearchLocationErrorCopyWithImpl<$Res>;
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class _$SearchLocationErrorCopyWithImpl<$Res>
-    extends _$SearchLocationCopyWithImpl<$Res>
+class _$SearchLocationErrorCopyWithImpl<$Res> extends _$SearchLocationCopyWithImpl<$Res>
     implements $SearchLocationErrorCopyWith<$Res> {
-  _$SearchLocationErrorCopyWithImpl(
-      SearchLocationError _value, $Res Function(SearchLocationError) _then)
+  _$SearchLocationErrorCopyWithImpl(SearchLocationError _value, $Res Function(SearchLocationError) _then)
       : super(_value, (v) => _then(v as SearchLocationError));
 
   @override
@@ -847,11 +802,9 @@ class _$SearchLocationError implements SearchLocationError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SearchLocationError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.stackTrace, stackTrace) ||
-                const DeepCollectionEquality()
-                    .equals(other.stackTrace, stackTrace)));
+                const DeepCollectionEquality().equals(other.stackTrace, stackTrace)));
   }
 
   @override
@@ -915,14 +868,12 @@ class _$SearchLocationError implements SearchLocationError {
 }
 
 abstract class SearchLocationError implements SearchLocation, ErrorAction {
-  const factory SearchLocationError(Object error, StackTrace stackTrace) =
-      _$SearchLocationError;
+  const factory SearchLocationError(Object error, StackTrace stackTrace) = _$SearchLocationError;
 
   Object get error => throw _privateConstructorUsedError;
   StackTrace get stackTrace => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SearchLocationErrorCopyWith<SearchLocationError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SearchLocationErrorCopyWith<SearchLocationError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -944,21 +895,18 @@ mixin _$SetIsMetricSystem {
   bool get isMetric => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetIsMetricSystemCopyWith<SetIsMetricSystem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetIsMetricSystemCopyWith<SetIsMetricSystem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetIsMetricSystemCopyWith<$Res> {
-  factory $SetIsMetricSystemCopyWith(
-          SetIsMetricSystem value, $Res Function(SetIsMetricSystem) then) =
+  factory $SetIsMetricSystemCopyWith(SetIsMetricSystem value, $Res Function(SetIsMetricSystem) then) =
       _$SetIsMetricSystemCopyWithImpl<$Res>;
   $Res call({bool isMetric});
 }
 
 /// @nodoc
-class _$SetIsMetricSystemCopyWithImpl<$Res>
-    implements $SetIsMetricSystemCopyWith<$Res> {
+class _$SetIsMetricSystemCopyWithImpl<$Res> implements $SetIsMetricSystemCopyWith<$Res> {
   _$SetIsMetricSystemCopyWithImpl(this._value, this._then);
 
   final SetIsMetricSystem _value;
@@ -979,21 +927,17 @@ class _$SetIsMetricSystemCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SetIsMetricSystemCopyWith<$Res>
-    implements $SetIsMetricSystemCopyWith<$Res> {
-  factory _$SetIsMetricSystemCopyWith(
-          _SetIsMetricSystem value, $Res Function(_SetIsMetricSystem) then) =
+abstract class _$SetIsMetricSystemCopyWith<$Res> implements $SetIsMetricSystemCopyWith<$Res> {
+  factory _$SetIsMetricSystemCopyWith(_SetIsMetricSystem value, $Res Function(_SetIsMetricSystem) then) =
       __$SetIsMetricSystemCopyWithImpl<$Res>;
   @override
   $Res call({bool isMetric});
 }
 
 /// @nodoc
-class __$SetIsMetricSystemCopyWithImpl<$Res>
-    extends _$SetIsMetricSystemCopyWithImpl<$Res>
+class __$SetIsMetricSystemCopyWithImpl<$Res> extends _$SetIsMetricSystemCopyWithImpl<$Res>
     implements _$SetIsMetricSystemCopyWith<$Res> {
-  __$SetIsMetricSystemCopyWithImpl(
-      _SetIsMetricSystem _value, $Res Function(_SetIsMetricSystem) _then)
+  __$SetIsMetricSystemCopyWithImpl(_SetIsMetricSystem _value, $Res Function(_SetIsMetricSystem) _then)
       : super(_value, (v) => _then(v as _SetIsMetricSystem));
 
   @override
@@ -1029,14 +973,11 @@ class _$_SetIsMetricSystem implements _SetIsMetricSystem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SetIsMetricSystem &&
-            (identical(other.isMetric, isMetric) ||
-                const DeepCollectionEquality()
-                    .equals(other.isMetric, isMetric)));
+            (identical(other.isMetric, isMetric) || const DeepCollectionEquality().equals(other.isMetric, isMetric)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isMetric);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(isMetric);
 
   @JsonKey(ignore: true)
   @override
@@ -1051,6 +992,5 @@ abstract class _SetIsMetricSystem implements SetIsMetricSystem {
   bool get isMetric => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SetIsMetricSystemCopyWith<_SetIsMetricSystem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$SetIsMetricSystemCopyWith<_SetIsMetricSystem> get copyWith => throw _privateConstructorUsedError;
 }
