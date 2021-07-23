@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
-import 'package:meta/meta.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:weather/src/data/weather_api.dart';
@@ -27,7 +26,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key, @required this.store}) : super(key: key);
+  const MyApp({Key? key, required this.store}) : super(key: key);
 
   final Store<AppState> store;
 

@@ -13,8 +13,7 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
 
   bool get isMetricSystem;
 
-  @nullable
-  LocationForecast get locationForecast;
+  LocationForecast? get locationForecast;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 

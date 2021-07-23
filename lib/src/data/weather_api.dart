@@ -1,18 +1,16 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:meta/meta.dart';
 import 'package:weather/src/models/index.dart';
 
 class WeatherApi {
-  const WeatherApi({@required Client client})
-      : assert(client != null),
-        _client = client;
+  const WeatherApi({required Client client}) : _client = client;
 
   final Client _client;
 
   Future<List<Location>> searchLocation(String location) async {
-    final Response response = await _client.get('https://www.metaweather.com/api/location/search/?query=$location');
+    final Uri url = Uri.parse('https://www.metaweather.com/api/location/search/?query=$location');
+    final Response response = await _client.get(url);
 
     final List<dynamic> data = jsonDecode(response.body);
 
@@ -21,7 +19,8 @@ class WeatherApi {
   }
 
   Future<LocationForecast> getForecast(int woeid) async {
-    final Response response = await _client.get('https://www.metaweather.com/api/location/$woeid');
+    final Uri url = Uri.parse('https://www.metaweather.com/api/location/$woeid');
+    final Response response = await _client.get(url);
 
     final Map<String, dynamic> data = jsonDecode(response.body);
 

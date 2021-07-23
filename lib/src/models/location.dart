@@ -4,7 +4,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
   factory Location([void Function(LocationBuilder b) updates]) = _$Location;
 
   factory Location.from(dynamic json) {
-    return serializers.deserializeWith(serializer, json);
+    return serializers.deserializeWith(serializer, json) as Location;
   }
 
   Location._();
