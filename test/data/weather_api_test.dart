@@ -9,6 +9,8 @@ import 'package:weather/src/models/index.dart';
 import '../mocks/mocks.dart';
 import '../test_data/generate_data.dart';
 
+class FakeUri extends Fake implements Uri {}
+
 void main() {
   final Client client = ClientMock();
   final WeatherApi api = WeatherApi(client: client);
@@ -22,6 +24,7 @@ void main() {
   setUpAll(() {
     // registerFallbackValue(url);
     // registerFallbackValue<Uri>(url);
+    // registerFallbackValue<Uri>(FakeUri());
   });
 
   tearDownAll(() {

@@ -17,6 +17,10 @@ void main() {
     resetMocktailState();
   });
 
+  setUp(() {
+    // clearInteractions(dummyApi);
+  });
+
   Future<dynamic> _get({String? path, String? token}) {
     return dummyApi.get(
       captureAny(that: path == null ? null : equals(path)),
@@ -87,6 +91,16 @@ void main() {
 
       // todo - verifyNever
       // verifyNever(()=>dummyApi.post());
+
+      // todo - verifyInOrder
+      // verifyInOrder([
+      //   () => _get(path: tokenPath),
+      //   () => _get(path: infoPath),
+      // ]);
+      // verifyNoMoreInteractions(dummyApi);
+
+      // todo - verifyZeroInteractions
+      // verifyZeroInteractions(dummyApi);
     });
 
     // todo - any instead of captureAny
