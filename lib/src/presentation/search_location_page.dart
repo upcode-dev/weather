@@ -5,7 +5,7 @@ import 'package:weather/src/containers/index.dart';
 import 'package:weather/src/models/index.dart';
 
 class SearchUsersPage extends StatelessWidget {
-  const SearchUsersPage({Key key}) : super(key: key);
+  const SearchUsersPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

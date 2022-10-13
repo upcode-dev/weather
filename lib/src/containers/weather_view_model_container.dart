@@ -1,7 +1,7 @@
 part of containers;
 
 class WeatherViewModelContainer extends StatelessWidget {
-  const WeatherViewModelContainer({Key key, @required this.builder}) : super(key: key);
+  const WeatherViewModelContainer({Key? key, required this.builder}) : super(key: key);
 
   final ViewModelBuilder<WeatherViewModel> builder;
 
@@ -20,12 +20,12 @@ class WeatherViewModelContainer extends StatelessWidget {
 
 class WeatherViewModel {
   const WeatherViewModel({
-    this.searchLocations,
-    this.locationForecast,
-    this.isMetricSystem,
+    required this.searchLocations,
+    required this.locationForecast,
+    required this.isMetricSystem,
   });
 
   final List<Location> searchLocations;
-  final LocationForecast locationForecast;
+  final LocationForecast? locationForecast;
   final bool isMetricSystem;
 }

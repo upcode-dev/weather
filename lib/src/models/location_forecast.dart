@@ -4,7 +4,7 @@ abstract class LocationForecast implements Built<LocationForecast, LocationForec
   factory LocationForecast([void Function(LocationForecastBuilder b) updates]) = _$LocationForecast;
 
   factory LocationForecast.from(dynamic json) {
-    return serializers.deserializeWith(serializer, json);
+    return serializers.deserializeWith(serializer, json) as LocationForecast;
   }
 
   LocationForecast._();

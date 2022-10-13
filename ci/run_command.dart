@@ -56,15 +56,15 @@ void printProgress(String action, String workingDir, String command) {
 Stream<String> runAndGetStdout(
   String executable,
   List<String> arguments, {
-  String workingDirectory,
-  Map<String, String> environment,
+  String? workingDirectory,
+  Map<String, String>? environment,
   bool expectNonZeroExit = false,
-  int expectedExitCode,
-  String failureMessage,
-  Function beforeExit,
+  int? expectedExitCode,
+  String? failureMessage,
+  Function? beforeExit,
 }) async* {
   final String commandDescription = '${path.relative(executable, from: workingDirectory)} ${arguments.join(' ')}';
-  final String relativeWorkingDir = path.relative(workingDirectory);
+  final String relativeWorkingDir = path.relative(workingDirectory!);
 
   printProgress('RUNNING', relativeWorkingDir, commandDescription);
 
@@ -102,15 +102,15 @@ Stream<String> runAndGetStdout(
 Future<void> runCommand(
   String executable,
   List<String> arguments, {
-  String workingDirectory,
-  Map<String, String> environment,
+  String? workingDirectory,
+  Map<String, String>? environment,
   bool expectNonZeroExit = false,
-  int expectedExitCode,
-  String failureMessage,
+  int? expectedExitCode,
+  String? failureMessage,
   OutputMode outputMode = OutputMode.print,
-  CapturedOutput output,
+  CapturedOutput? output,
   bool skip = false,
-  bool Function(String) removeLine,
+  bool Function(String)? removeLine,
 }) async {
   assert(
       (outputMode == OutputMode.capture) == (output != null),
@@ -118,7 +118,7 @@ Future<void> runCommand(
       'OutputMode.capture');
 
   final String commandDescription = '${path.relative(executable, from: workingDirectory)} ${arguments.join(' ')}';
-  final String relativeWorkingDir = path.relative(workingDirectory);
+  final String relativeWorkingDir = path.relative(workingDirectory!);
   if (skip) {
     printProgress('SKIPPING', relativeWorkingDir, commandDescription);
     return;
@@ -133,7 +133,7 @@ Future<void> runCommand(
     environment: environment,
   );
 
-  Future<List<List<int>>> savedStdout, savedStderr;
+  late Future<List<List<int>>> savedStdout, savedStderr;
   final Stream<List<int>> stdoutSource = process.stdout
       .transform<String>(const Utf8Decoder())
       .transform(const LineSplitter())
@@ -197,6 +197,6 @@ enum OutputMode { print, capture, discard }
 
 /// Stores command output from [runCommand] when used with [OutputMode.capture].
 class CapturedOutput {
-  String stdout;
-  String stderr;
+  late String stdout;
+  late String stderr;
 }

@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:meta/meta.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:weather/src/actions/index.dart';
@@ -7,9 +5,7 @@ import 'package:weather/src/data/weather_api.dart';
 import 'package:weather/src/models/index.dart';
 
 class AppEpics {
-  const AppEpics({@required WeatherApi api})
-      : assert(api != null),
-        _weatherApi = api;
+  const AppEpics({required WeatherApi api}) : _weatherApi = api;
 
   final WeatherApi _weatherApi;
 
@@ -26,7 +22,7 @@ class AppEpics {
         .flatMap((SearchLocation$ action) => Stream<SearchLocation$>.value(action)
             .asyncMap((SearchLocation$ action) => _weatherApi.searchLocation(action.location))
             .map((List<Location> locations) => SearchLocation.successful(locations))
-            .onErrorReturnWith((dynamic error) => SearchLocation.error(error)));
+            .onErrorReturnWith((dynamic error, StackTrace stackTrace) => SearchLocation.error(error, stackTrace)));
   }
 
   Stream<AppAction> _getForecast$(Stream<GetForecast$> actions, EpicStore<AppState> store) {
@@ -34,6 +30,6 @@ class AppEpics {
         .flatMap((GetForecast$ action) => Stream<GetForecast$>.value(action)
             .asyncMap((GetForecast$ action) => _weatherApi.getForecast(action.woeid))
             .map((LocationForecast locationForecast) => GetForecast.successful(locationForecast))
-            .onErrorReturnWith((dynamic error) => GetForecast.error(error)));
+            .onErrorReturnWith((dynamic error, StackTrace stackTrace) => GetForecast.error(error, stackTrace)));
   }
 }
